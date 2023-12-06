@@ -1,6 +1,7 @@
 .layout {
 	display: flex;
 	min-height: 100vh;
+	min-width: 242px;
 }
 .sidebar {
 	display: flex;
@@ -47,6 +48,7 @@
 	line-height: normal;
 	color: var(--text-color);
 	margin-bottom: 7px;
+	white-space: nowrap;
 }
 .email {
 	font-size: 14px;
