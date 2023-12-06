@@ -3,6 +3,7 @@
 	--primary-color: #FE724C;
 	--primary-hover-color: rgb(230, 98, 61);
 	--text-color: #000000;
+	--email-color: #9EA1B1;
 	--text-secondary-color: #5B5B5E;
 	--white-color: #FFFFFF;
 	--separator-color: #D4D6E0;
@@ -11,4 +12,5 @@
 }
 body {
 	font-family: 'Open Sans', sans-serif;
+	margin: 0;
 }
