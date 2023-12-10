@@ -5,18 +5,21 @@ import Search from '../../components/Search/Search';
 import { PREFIX } from '../../helpers/API';
 import { Product } from '../../interfaces/product.interface';
 import styles from './Menu.module.css';
-import axios from 'axios'
+import axios from 'axios';
+import Skeleton from '../../components/Skeketon/Skeleton';
 
 export function Menu() {
 	const [products, setProducts] = useState<Product[]>([]);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	const getProduct = async () => {
 		try {
 			const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
 			setProducts(data);
+			setIsLoading(true);
 		} catch (e) {
-				console.error(e);
-				return;
+			console.error(e);
+			return;
 		}
 		// try {
 		// 	const res = await fetch(`${PREFIX}/products`);
@@ -42,17 +45,22 @@ export function Menu() {
 				<Search placeholder="Введите блюдо или состав" />
 			</div>
 			<div>
-				{products.map((p) => (
-					<ProductCard
-						key={p.id}
-						id={p.id}
-						rating={p.rating}
-						name={p.name}
-						description={p.ingredients.join(', ')}
-						price={p.price}
-						image={p.image}
-					/>
-				))}
+				{isLoading
+					? products.map((p) => (
+							<ProductCard
+								key={p.id}
+								id={p.id}
+								rating={p.rating}
+								name={p.name}
+								description={p.ingredients.join(', ')}
+								price={p.price}
+								image={p.image}
+							/>
+							// eslint-disable-next-line no-mixed-spaces-and-tabs
+					  ))
+					: Array(4)
+							.fill(0)
+							.map((_, index) => <Skeleton key={index} />)}
 			</div>
 		</>
 	);
