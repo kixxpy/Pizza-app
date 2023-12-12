@@ -1,0 +1,46 @@
+.login {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.field label {
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	color: var(--input-placeholder-color);
+}
+.input {
+	min-width: 325px;
+}
+.links {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	color: var(--text-secondary-color);
+}
+.links a {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+.link a:hover {
+	color: var(--primary-hover-color);
+}
+.btn {
+	margin: auto;
+	min-width: 250px;
+}
