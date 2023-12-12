@@ -6,7 +6,6 @@ function Button({ children, className, appeareance = 'small', ...props }: Button
 	return (
 		<>
 			<button
-				onClick={() => console.log('button')}
 				className={cn(styles['button'], styles['accent'], className, {
 					[styles['small']]: appeareance === 'small',
 					[styles['big']]: appeareance === 'big',

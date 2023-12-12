@@ -44,3 +44,9 @@
 	margin: auto;
 	min-width: 250px;
 }
+.error {
+	padding: 10px;
+	background-color: #FFC529;
+	color: var(--white-color);
+	text-align: center;
+}
